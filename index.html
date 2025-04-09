@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Registration Portal</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Student Registration Portal</h1>
+    <p>
+      Hello! We are pleased to welcome you here. Simply provide your name, student ID, e-mail address, and phone number to guarantee an effortless enrollment process. Before you hit submit, take a second to double check everything because that will help us keep things running smoothly. Thank you for joining us... we cannot wait to see what you accomplish!
+    </p>
+
+    <div class="container">
+      <form id="studentForm">
+        <label for="name">Name</label>
+        <input type="text" id="name" placeholder="Enter your name" required />
+
+        <label for="studentId">Student ID</label>
+        <input
+          type="number"
+          id="studentId"
+          placeholder="Enter your student ID"
+          required
+        />
+
+        <label for="email">Email</label>
+        <input
+          type="email"
+          id="email"
+          placeholder="example@email.com"
+          required
+        />
+
+        <label for="contact">Contact Number</label>
+        <input
+          type="tel"
+          id="contact"
+          placeholder="10-12 digit number"
+          required
+          pattern="[0-9]{10,12}"
+        />
+
+        <button type="submit">Register</button>
+      </form>
+    </div>
+
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>ID</th>
+            <th>Email</th>
+            <th>Contact</th>
+            <th>Edit</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody id="studentList"></tbody>
+      </table>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
