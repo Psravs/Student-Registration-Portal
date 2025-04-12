@@ -1,10 +1,11 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {  //waits for HTML code to be fully loaded before running the Js code 
     loadStudents();
   });
 
   document.getElementById("studentForm").addEventListener("submit", function(e) {
     e.preventDefault();
 
+    //trim() - removes white spaces 
     const name = document.getElementById("name").value.trim();
     const studentId = document.getElementById("studentId").value.trim();
     const email = document.getElementById("email").value.trim();
@@ -13,6 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const emailRegister = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const phoneRegister = /^[0-9]{10,12}$/;
 
+    //error handling using test method and alert popup
     if (!emailRegister.test(email)) {
       alert("Invalid email format.");
       return;
@@ -28,6 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
     this.reset();
   });
 
+  //creating a table to display student details 
   function addStudent(name, studentId, email, contact) {
     const row = document.createElement("tr");
     row.innerHTML = `
@@ -67,6 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
     localStorage.setItem("students", JSON.stringify(data));
   }
 
+  //storing student details using localStorage to avoid losing data 
   function loadStudents() {
     const stored = JSON.parse(localStorage.getItem("students")) || [];
     stored.forEach(student => addStudent(student.name, student.studentId, student.email, student.contact));
