@@ -75,3 +75,4 @@ document.addEventListener("DOMContentLoaded", () => {  //waits for HTML code to 
     const stored = JSON.parse(localStorage.getItem("students")) || [];
     stored.forEach(student => addStudent(student.name, student.studentId, student.email, student.contact));
   }
+  
