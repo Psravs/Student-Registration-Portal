@@ -49,6 +49,8 @@ body {
     transition: background-color 0.3s;
   }
 
+  /* button hover effect */
+
   button:hover {
     background-color: #e55a4d;
   }
