@@ -10,15 +10,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const email = document.getElementById("email").value.trim();
     const contact = document.getElementById("contact").value.trim();
 
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const phoneRegex = /^[0-9]{10,12}$/;
+    const emailRegister = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const phoneRegister = /^[0-9]{10,12}$/;
 
-    if (!emailRegex.test(email)) {
+    if (!emailRegister.test(email)) {
       alert("Invalid email format.");
       return;
     }
 
-    if (!phoneRegex.test(contact)) {
+    if (!phoneRegister.test(contact)) {
       alert("Contact number should be 10 to 12 digits.");
       return;
     }
