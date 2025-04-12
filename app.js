@@ -44,6 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {  //waits for HTML code to 
     document.getElementById("studentList").appendChild(row);
   }
 
+  //editing details displayed in the table
   function editStudent(el) {
     const row = el.closest("tr");
     document.getElementById("name").value = row.children[0].textContent;
@@ -54,11 +55,13 @@ document.addEventListener("DOMContentLoaded", () => {  //waits for HTML code to 
     saveStudents();
   }
 
+  //deleting details displayed in the table
   function deleteStudent(el) {
     el.closest("tr").remove();
     saveStudents();
   }
 
+  //saving student details on localStorage
   function saveStudents() {
     const rows = document.querySelectorAll("#studentList tr");
     const data = Array.from(rows).map(row => ({
@@ -70,7 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {  //waits for HTML code to 
     localStorage.setItem("students", JSON.stringify(data));
   }
 
-  //storing student details using localStorage to avoid losing data 
+  //retrieving data from localStorage
   function loadStudents() {
     const stored = JSON.parse(localStorage.getItem("students")) || [];
     stored.forEach(student => addStudent(student.name, student.studentId, student.email, student.contact));
