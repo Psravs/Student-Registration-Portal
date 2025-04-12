@@ -1,2 +1,2 @@
 Git Hub Repository Link -
-https://github.com/Psravs/Js-Assignment-1
+https://github.com/Psravs/Student-Registration-Portal
